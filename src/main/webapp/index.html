@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.8.3/themes/bootstrap/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.8.3/themes/icon.css"/>
+    <script type="text/javascript" src="/jquery-easyui-1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/jquery-easyui-1.8.3/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/jquery-easyui-1.8.3/locale/easyui-lang-zh_CN.js"></script>
+    <title>表格导出页面</title>
+</head>
+<body>
+<a class="easyui-linkbutton" href="/download">
+    <p id="xiazai" style="margin: 0;padding: 0; font-size: 15px;">如果没有自动下载，请点击下载</p>
+</a>
+</body>
+<script>
+    $(function () {
+        daochu();
+        $("#xiazai").click();
+    });
+
+    //导出
+    function daochu() {
+        $.ajax({
+            type: "POST",
+            async: true,
+            url: "/findAll"
+        });
+    }
+</script>
+</html>
